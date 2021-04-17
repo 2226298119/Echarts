@@ -2,51 +2,91 @@
   <div class="screen-container" :style="containerStyle">
     <header class="screen-header">
       <div>
-        <img :src="headerSrc" alt="">
+        <img :src="headerSrc" alt="" />
       </div>
-      <span class="logo">
+      <!--       <span class="logo">
         <img :src="logoSrc" alt="" />
-      </span>
-      <span class="title">电商平台实时监控系统</span>
+      </span> -->
+      <span class="title">房产销售数据实时监控系统</span>
       <div class="title-right">
-        <img :src="themeSrc" class="qiehuan" @click="handleChangeTheme">
-        <span class="datetime">2049-01-01 00:00:00</span>
+        <img :src="themeSrc" class="qiehuan" @click="handleChangeTheme" />
+        <span class="datetime">{{ nowDate }}</span>
       </div>
     </header>
     <div class="screen-body">
       <section class="screen-left">
-        <div id="left-top" :class="[fullScreenStatus.trend ? 'fullscreen' : '']">
+        <div
+          id="left-top"
+          :class="[fullScreenStatus.trend ? 'fullscreen' : '']"
+        >
           <!-- 销量趋势图表 -->
           <Trend ref="trend"></Trend>
           <div class="resize">
             <!-- icon-compress-alt -->
-            <span @click="changeSize('trend')" :class="['iconfont', fullScreenStatus.trend ? 'icon-compress-alt' : 'icon-expand-alt']"></span>
+            <span
+              @click="changeSize('trend')"
+              :class="[
+                'iconfont',
+                fullScreenStatus.trend
+                  ? 'icon-compress-alt'
+                  : 'icon-expand-alt',
+              ]"
+            ></span>
           </div>
         </div>
-        <div id="left-bottom" :class="[fullScreenStatus.seller ? 'fullscreen' : '']">
+        <div
+          id="left-bottom"
+          :class="[fullScreenStatus.seller ? 'fullscreen' : '']"
+        >
           <!-- 商家销售金额图表 -->
           <Seller ref="seller"></Seller>
           <div class="resize">
             <!-- icon-compress-alt -->
-            <span @click="changeSize('seller')"  :class="['iconfont', fullScreenStatus.seller ? 'icon-compress-alt' : 'icon-expand-alt']"></span>
+            <span
+              @click="changeSize('seller')"
+              :class="[
+                'iconfont',
+                fullScreenStatus.seller
+                  ? 'icon-compress-alt'
+                  : 'icon-expand-alt',
+              ]"
+            ></span>
           </div>
         </div>
       </section>
       <section class="screen-middle">
-        <div id="middle-top" :class="[fullScreenStatus.map ? 'fullscreen' : '']">
+        <div
+          id="middle-top"
+          :class="[fullScreenStatus.map ? 'fullscreen' : '']"
+        >
           <!-- 商家分布图表 -->
           <Map ref="map"></Map>
           <div class="resize">
             <!-- icon-compress-alt -->
-            <span @click="changeSize('map')"  :class="['iconfont', fullScreenStatus.map ? 'icon-compress-alt' : 'icon-expand-alt']"></span>
+            <span
+              @click="changeSize('map')"
+              :class="[
+                'iconfont',
+                fullScreenStatus.map ? 'icon-compress-alt' : 'icon-expand-alt',
+              ]"
+            ></span>
           </div>
         </div>
-        <div id="middle-bottom" :class="[fullScreenStatus.rank ? 'fullscreen' : '']">
+        <div
+          id="middle-bottom"
+          :class="[fullScreenStatus.rank ? 'fullscreen' : '']"
+        >
           <!-- 地区销量排行图表 -->
           <Rank ref="rank"></Rank>
           <div class="resize">
             <!-- icon-compress-alt -->
-            <span @click="changeSize('rank')"  :class="['iconfont', fullScreenStatus.rank ? 'icon-compress-alt' : 'icon-expand-alt']"></span>
+            <span
+              @click="changeSize('rank')"
+              :class="[
+                'iconfont',
+                fullScreenStatus.rank ? 'icon-compress-alt' : 'icon-expand-alt',
+              ]"
+            ></span>
           </div>
         </div>
       </section>
@@ -56,15 +96,32 @@
           <Hot ref="hot"></Hot>
           <div class="resize">
             <!-- icon-compress-alt -->
-            <span @click="changeSize('hot')"  :class="['iconfont', fullScreenStatus.hot ? 'icon-compress-alt' : 'icon-expand-alt']"></span>
+            <span
+              @click="changeSize('hot')"
+              :class="[
+                'iconfont',
+                fullScreenStatus.hot ? 'icon-compress-alt' : 'icon-expand-alt',
+              ]"
+            ></span>
           </div>
         </div>
-        <div id="right-bottom" :class="[fullScreenStatus.stock ? 'fullscreen' : '']">
+        <div
+          id="right-bottom"
+          :class="[fullScreenStatus.stock ? 'fullscreen' : '']"
+        >
           <!-- 库存销量分析图表 -->
           <Stock ref="stock"></Stock>
           <div class="resize">
             <!-- icon-compress-alt -->
-            <span @click="changeSize('stock')"  :class="['iconfont', fullScreenStatus.stock ? 'icon-compress-alt' : 'icon-expand-alt']"></span>
+            <span
+              @click="changeSize('stock')"
+              :class="[
+                'iconfont',
+                fullScreenStatus.stock
+                  ? 'icon-compress-alt'
+                  : 'icon-expand-alt',
+              ]"
+            ></span>
           </div>
         </div>
       </section>
@@ -73,25 +130,25 @@
 </template>
 
 <script>
-import Hot from '@/components/Hot.vue'
-import Map from '@/components/Map.vue'
-import Rank from '@/components/Rank.vue'
-import Seller from '@/components/Seller.vue'
-import Stock from '@/components/Stock.vue'
-import Trend from '@/components/Trend.vue'
-import { mapState } from 'vuex'
-import { getThemeValue } from '@/utils/theme_utils'
+import Hot from "@/components/Hot.vue";
+import Map from "@/components/Map.vue";
+import Rank from "@/components/Rank.vue";
+import Seller from "@/components/Seller.vue";
+import Stock from "@/components/Stock.vue";
+import Trend from "@/components/Trend.vue";
+import { mapState } from "vuex";
+import { getThemeValue } from "@/utils/theme_utils";
 export default {
-  created () {
+  created() {
     // 注册接收到数据的回调函数
-    this.$socket.registerCallBack('fullScreen', this.recvData)
-    this.$socket.registerCallBack('themeChange', this.recvThemeChange)
+    this.$socket.registerCallBack("fullScreen", this.recvData);
+    this.$socket.registerCallBack("themeChange", this.recvThemeChange);
   },
-  destroyed () {
-    this.$socket.unRegisterCallBack('fullScreen')
-    this.$socket.unRegisterCallBack('themeChange')
+  destroyed() {
+    this.$socket.unRegisterCallBack("fullScreen");
+    this.$socket.unRegisterCallBack("themeChange");
   },
-  data () {
+  data() {
     return {
       // 定义每一个图表的全屏状态
       fullScreenStatus: {
@@ -100,12 +157,15 @@ export default {
         map: false,
         rank: false,
         hot: false,
-        stock: false
-      }
-    }
+        stock: false,
+      },
+      //定义当前时间
+      nowDate: "",
+    };
   },
   methods: {
-    changeSize (chartName) {
+    //放大按钮 某个视图全屏
+    changeSize(chartName) {
       // 1.改变fullScreenStatus的数据
       // this.fullScreenStatus[chartName] = !this.fullScreenStatus[chartName]
       // 2.需要调用每一个图表组件的screenAdapter的方法
@@ -114,38 +174,65 @@ export default {
       //   this.$refs[chartName].screenAdapter()
       // })
       // 将数据发送给服务端
-      const targetValue = !this.fullScreenStatus[chartName]
+      const targetValue = !this.fullScreenStatus[chartName];
       this.$socket.send({
-        action: 'fullScreen',
-        socketType: 'fullScreen',
+        action: "fullScreen",
+        socketType: "fullScreen",
         chartName: chartName,
-        value: targetValue
-      })
+        value: targetValue,
+      });
     },
     // 接收到全屏数据之后的处理
-    recvData (data) {
+    recvData(data) {
       // 取出是哪一个图表需要进行切换
-      const chartName = data.chartName
+      const chartName = data.chartName;
       // 取出, 切换成什么状态
-      const targetValue = data.value
-      this.fullScreenStatus[chartName] = targetValue
+      const targetValue = data.value;
+      this.fullScreenStatus[chartName] = targetValue;
       this.$nextTick(() => {
-        this.$refs[chartName].screenAdapter()
-      })
+        this.$refs[chartName].screenAdapter();
+      });
     },
-    handleChangeTheme () {
+    handleChangeTheme() {
       // 修改VueX中数据
       // this.$store.commit('changeTheme')
       this.$socket.send({
-        action: 'themeChange',
-        socketType: 'themeChange',
-        chartName: '',
-        value: ''
-      })
+        action: "themeChange",
+        socketType: "themeChange",
+        chartName: "",
+        value: "",
+      });
     },
-    recvThemeChange () {
-      this.$store.commit('changeTheme')
-    }
+    recvThemeChange() {
+      this.$store.commit("changeTheme");
+    },
+    //获取当前时间方法
+    currentTime() {
+      setInterval(this.formatDate, 500);
+    },
+    formatDate() {
+      let date = new Date();
+      let year = date.getFullYear(); // 年
+      let month = date.getMonth() + 1; // 月
+      let day = date.getDate(); // 日
+      let week = date.getDay(); // 星期
+      let weekArr = [
+        "星期日",
+        "星期一",
+        "星期二",
+        "星期三",
+        "星期四",
+        "星期五",
+        "星期六",
+      ];
+      let hour = date.getHours(); // 时
+      hour = hour < 10 ? "0" + hour : hour; // 如果只有一位，则前面补零
+      let minute = date.getMinutes(); // 分
+      minute = minute < 10 ? "0" + minute : minute; // 如果只有一位，则前面补零
+      let second = date.getSeconds(); // 秒
+      second = second < 10 ? "0" + second : second; // 如果只有一位，则前面补零
+      this.nowDate = `${year}/${month}/${day} ${hour}:${minute}:${second} ${weekArr[week]}`;
+    },
   },
   components: {
     Hot,
@@ -153,32 +240,41 @@ export default {
     Rank,
     Seller,
     Stock,
-    Trend
+    Trend,
   },
   computed: {
-    logoSrc () {
-      return '/static/img/' + getThemeValue(this.theme).logoSrc
+/*     logoSrc() {
+      return "/static/img/" + getThemeValue(this.theme).logoSrc;
+    }, */
+    headerSrc() {
+      return "/static/img/" + getThemeValue(this.theme).headerBorderSrc;
     },
-    headerSrc () {
-      return '/static/img/' + getThemeValue(this.theme).headerBorderSrc
+    themeSrc() {
+      return "/static/img/" + getThemeValue(this.theme).themeSrc;
     },
-    themeSrc () {
-      return '/static/img/' + getThemeValue(this.theme).themeSrc
-    },
-    containerStyle () {
+    containerStyle() {
       return {
         backgroundColor: getThemeValue(this.theme).backgroundColor,
-        color: getThemeValue(this.theme).titleColor
-      }
+        color: getThemeValue(this.theme).titleColor,
+      };
     },
-    ...mapState(['theme'])
-  }
-}
+    ...mapState(["theme"]),
+  },
+  mounted() {
+    this.currentTime();
+  },
+  // 销毁定时器
+  beforeDestroy() {
+    if (this.formatDate) {
+      clearInterval(this.formatDate); // 在Vue实例销毁前，清除时间定时器
+    }
+  },
+};
 </script>
 <style lang="less" scoped>
 // 全屏样式的定义
 .fullscreen {
-  position: fixed!important;
+  position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
@@ -200,11 +296,12 @@ export default {
   height: 64px;
   font-size: 20px;
   position: relative;
+  //样式为顶部那条凹槽的线
   > div {
-      img {
-        width: 100%;
-      }
+    img {
+      width: 100%;
     }
+  }
   .title {
     position: absolute;
     left: 50%;
@@ -215,7 +312,7 @@ export default {
   .title-right {
     display: flex;
     align-items: center;
-    position:absolute;
+    position: absolute;
     right: 0px;
     top: 50%;
     transform: translateY(-80%);
@@ -229,7 +326,7 @@ export default {
     font-size: 15px;
     margin-left: 10px;
   }
-  .logo {
+/*   .logo {
     position: absolute;
     left: 0px;
     top: 50%;
@@ -238,7 +335,7 @@ export default {
       height: 35px;
       width: 128px;
     }
-  }
+  } */
 }
 .screen-body {
   width: 100%;

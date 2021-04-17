@@ -1,0 +1,482 @@
+[
+  {
+    "name": "姜国",
+    "value": 0
+  },
+  {
+    "name": "虞小",
+    "value": 1
+  },
+  {
+    "name": "祁奋斗",
+    "value": 2
+  },
+  {
+    "name": "梅兰兰",
+    "value": 3
+  },
+  {
+    "name": "闽秀",
+    "value": 4
+  },
+  {
+    "name": "杭娟娟",
+    "value": 5
+  },
+  {
+    "name": "张简金",
+    "value": 6
+  },
+  {
+    "name": "茅杰",
+    "value": 7
+  },
+  {
+    "name": "介字",
+    "value": 8
+  },
+  {
+    "name": "龙娟娟",
+    "value": 9
+  },
+  {
+    "name": "称杰",
+    "value": 10
+  },
+  {
+    "name": "訾国",
+    "value": 11
+  },
+  {
+    "name": "孙国",
+    "value": 12
+  },
+  {
+    "name": "载乐",
+    "value": 13
+  },
+  {
+    "name": "戏字",
+    "value": 14
+  },
+  {
+    "name": "潜成",
+    "value": 15
+  },
+  {
+    "name": "花成",
+    "value": 16
+  },
+  {
+    "name": "资静",
+    "value": 17
+  },
+  {
+    "name": "善强",
+    "value": 18
+  },
+  {
+    "name": "机平安",
+    "value": 19
+  },
+  {
+    "name": "勇华",
+    "value": 20
+  },
+  {
+    "name": "释乐",
+    "value": 21
+  },
+  {
+    "name": "针一",
+    "value": 22
+  },
+  {
+    "name": "印杰",
+    "value": 23
+  },
+  {
+    "name": "弥和平",
+    "value": 24
+  },
+  {
+    "name": "果金",
+    "value": 25
+  },
+  {
+    "name": "台国",
+    "value": 26
+  },
+  {
+    "name": "歧海",
+    "value": 27
+  },
+  {
+    "name": "智玉",
+    "value": 28
+  },
+  {
+    "name": "冠小",
+    "value": 29
+  },
+  {
+    "name": "纳喇艳丽",
+    "value": 5
+  },
+  {
+    "name": "己小",
+    "value": 6
+  },
+  {
+    "name": "郭香",
+    "value": 7
+  },
+  {
+    "name": "犁明",
+    "value": 8
+  },
+  {
+    "name": "牟杰",
+    "value": 9
+  },
+  {
+    "name": "环香",
+    "value": 10
+  },
+  {
+    "name": "梅明",
+    "value": 11
+  },
+  {
+    "name": "瑞丽丽",
+    "value": 12
+  },
+  {
+    "name": "碧龙",
+    "value": 13
+  },
+  {
+    "name": "充成",
+    "value": 14
+  },
+  {
+    "name": "伯明",
+    "value": 15
+  },
+  {
+    "name": "萨新",
+    "value": 16
+  },
+  {
+    "name": "卷红",
+    "value": 17
+  },
+  {
+    "name": "洪和平",
+    "value": 18
+  },
+  {
+    "name": "贡兰兰",
+    "value": 19
+  },
+  {
+    "name": "凌玉",
+    "value": 20
+  },
+  {
+    "name": "上官国",
+    "value": 21
+  },
+  {
+    "name": "禹成",
+    "value": 22
+  },
+  {
+    "name": "杨艳丽",
+    "value": 23
+  },
+  {
+    "name": "罕卫国",
+    "value": 24
+  },
+  {
+    "name": "白传奇",
+    "value": 25
+  },
+  {
+    "name": "鲜于样",
+    "value": 26
+  },
+  {
+    "name": "长春",
+    "value": 27
+  },
+  {
+    "name": "韦样",
+    "value": 28
+  },
+  {
+    "name": "念春",
+    "value": 29
+  },
+  {
+    "name": "冯国",
+    "value": 30
+  },
+  {
+    "name": "武卫国",
+    "value": 31
+  },
+  {
+    "name": "西门和平",
+    "value": 32
+  },
+  {
+    "name": "衅成",
+    "value": 33
+  },
+  {
+    "name": "府静",
+    "value": 34
+  },
+  {
+    "name": "英传奇",
+    "value": 13
+  },
+  {
+    "name": "岑卫国",
+    "value": 14
+  },
+  {
+    "name": "墨龙",
+    "value": 15
+  },
+  {
+    "name": "丑金",
+    "value": 16
+  },
+  {
+    "name": "学凤",
+    "value": 17
+  },
+  {
+    "name": "邗华",
+    "value": 18
+  },
+  {
+    "name": "楚华",
+    "value": 19
+  },
+  {
+    "name": "完小",
+    "value": 20
+  },
+  {
+    "name": "舜静",
+    "value": 21
+  },
+  {
+    "name": "关平安",
+    "value": 22
+  },
+  {
+    "name": "水静",
+    "value": 23
+  },
+  {
+    "name": "戎红",
+    "value": 24
+  },
+  {
+    "name": "象娜娜",
+    "value": 25
+  },
+  {
+    "name": "申兰兰",
+    "value": 26
+  },
+  {
+    "name": "承娟娟",
+    "value": 27
+  },
+  {
+    "name": "马佳娜娜",
+    "value": 28
+  },
+  {
+    "name": "刀华",
+    "value": 29
+  },
+  {
+    "name": "曹丽丽",
+    "value": 30
+  },
+  {
+    "name": "沃乐",
+    "value": 31
+  },
+  {
+    "name": "卿兰兰",
+    "value": 32
+  },
+  {
+    "name": "仵和平",
+    "value": 33
+  },
+  {
+    "name": "官杰",
+    "value": 34
+  },
+  {
+    "name": "壤驷英",
+    "value": 35
+  },
+  {
+    "name": "卜传奇",
+    "value": 36
+  },
+  {
+    "name": "辜一",
+    "value": 37
+  },
+  {
+    "name": "从样",
+    "value": 38
+  },
+  {
+    "name": "韦传奇",
+    "value": 39
+  },
+  {
+    "name": "劳奋斗",
+    "value": 40
+  },
+  {
+    "name": "能文",
+    "value": 41
+  },
+  {
+    "name": "尾小",
+    "value": 42
+  },
+  {
+    "name": "璩秀",
+    "value": 17
+  },
+  {
+    "name": "度华",
+    "value": 18
+  },
+  {
+    "name": "锐国",
+    "value": 19
+  },
+  {
+    "name": "德娟娟",
+    "value": 20
+  },
+  {
+    "name": "郏娜娜",
+    "value": 21
+  },
+  {
+    "name": "穰吉祥",
+    "value": 22
+  },
+  {
+    "name": "淡传奇",
+    "value": 23
+  },
+  {
+    "name": "羿乐",
+    "value": 24
+  },
+  {
+    "name": "颛孙吉祥",
+    "value": 25
+  },
+  {
+    "name": "闳传奇",
+    "value": 26
+  },
+  {
+    "name": "铁一",
+    "value": 27
+  },
+  {
+    "name": "茅成",
+    "value": 28
+  },
+  {
+    "name": "叔海",
+    "value": 29
+  },
+  {
+    "name": "邱传奇",
+    "value": 30
+  },
+  {
+    "name": "枚和平",
+    "value": 31
+  },
+  {
+    "name": "翦红",
+    "value": 32
+  },
+  {
+    "name": "望样",
+    "value": 33
+  },
+  {
+    "name": "余字",
+    "value": 34
+  },
+  {
+    "name": "孝和平",
+    "value": 35
+  },
+  {
+    "name": "剑明",
+    "value": 36
+  },
+  {
+    "name": "丛传奇",
+    "value": 37
+  },
+  {
+    "name": "将和平",
+    "value": 38
+  },
+  {
+    "name": "闫静",
+    "value": 39
+  },
+  {
+    "name": "潭和平",
+    "value": 40
+  },
+  {
+    "name": "闵强",
+    "value": 41
+  },
+  {
+    "name": "公红",
+    "value": 42
+  },
+  {
+    "name": "摩凤",
+    "value": 43
+  },
+  {
+    "name": "习新",
+    "value": 44
+  },
+  {
+    "name": "闻强",
+    "value": 45
+  },
+  {
+    "name": "留和平",
+    "value": 46
+  }
+]
